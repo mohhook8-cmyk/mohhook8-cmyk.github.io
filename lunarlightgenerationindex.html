@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUNAR WIRELESS POWER - 2.4GHz Microwave Transfer</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background: radial-gradient(circle at 50% 0%, #1e293b 0%, #020617 60%, #000 100%);
+    color:white; font-family: Arial, sans-serif;
+    text-align:center; min-height:100vh; padding:20px;
+  }
+  .top{font-size:14px;letter-spacing:2px;color:#a5b4fc;margin-top:10px}
+  .title{font-size:22px;font-weight:bold;margin:8px 0 4px}
+  .subtitle{font-size:13px;color:#94a3b8}
+
+  /* Moon -> Earth */
+  .transfer{
+    display:flex; align-items:center; justify-content:center;
+    gap:15px; margin:25px 0; font-size:48px;
+  }
+  .beam{font-size:30px; animation:pulse 1s infinite; color:#38f8ff}
+  @keyframes pulse{0%{opacity:.2}50%{opacity:1}100%{opacity:.2}}
+  .label-moon,.label-earth{font-size:11px;color:#cbd5e1;display:block;margin-top:5px}
+
+  .live{
+    display:inline-block; background:#22c55e; color:white;
+    padding:6px 16px; border-radius:20px; font-size:13px; font-weight:bold;
+  }
+  .live-dot{animation:blink 1s infinite}
+  @keyframes blink{0%{opacity:1}50%{opacity:.3}100%{opacity:1}}
+
+  /* BIG NUMBER */
+  #big{
+    font-size:95px; font-weight:900; color:#38f8ff;
+    text-shadow:0 0 25px #38f8ff, 0 0 50px #0ea5e9;
+    margin:12px 0 2px; line-height:1;
+  }
+  #unit{font-size:22px;color:#38f8ff}
+  #label{
+    font-size:15px; letter-spacing:2px; color:#e2e8f0;
+    font-weight:bold; margin:8px 0;
+  }
+  #sub{font-size:13px;color:#94a3b8;margin:6px 0 18px; line-height:1.5}
+
+  /* Wave Graph */
+  canvas{
+    width:92%; max-width:520px; height:80px;
+    background:#0f172a; border-radius:12px;
+    border:1px solid #1e293b; margin:10px auto; display:block;
+  }
+
+  /* Info Boxes */
+  .boxes{display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin:15px 0}
+  .box{
+    background:#0f172a; border:1px solid #1e293b; border-radius:12px;
+    padding:12px 16px; min-width:130px;
+  }
+  .box b{display:block; font-size:18px; color:#38f8ff}
+  .box span{font-size:11px; color:#94a3b8}
+
+  button{
+    background:#1e293b; color:white; border:1px solid #38f8ff;
+    padding:11px 20px; border-radius:25px; margin:6px;
+    cursor:pointer; font-size:14px;
+  }
+  button:hover{background:#38f8ff; color:#020617}
+  .footer{font-size:11px;color:#64748b;margin-top:20px;line-height:1.6}
+</style>
+</head>
+<body>
+
+<div class="top">🌑 LUNAR WIRELESS POWER</div>
+<div class="title">Microwave Power From Moon To Earth</div>
+<div class="subtitle">2.4 GHz &bull; HDPLUS Rectenna &bull; HSMS-2850 &bull; ESP32</div>
+
+<div class="transfer">
+  <div>🌙<span class="label-moon">MOON<br>SOLAR + TEG</span></div>
+  <div class="beam">〰️📡〰️</div>
+  <div>🌍<span class="label-earth">EARTH<br>RECTENNA</span></div>
+</div>
+
+<div><span class="live"><span class="live-dot">●</
